@@ -36,4 +36,6 @@ func ProbOne(countOf int, maxOf int) int {
 	}
 
 	return Sum(solutionsList)
+
+	// Answer: 233,168
 }
