@@ -9,12 +9,40 @@ Author: Matthew Sunner, 2025
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
+	"strings"
 
 	probs "github.com/mattsunner/eulersolves/internal"
 )
 
+func printMenu() {
+	fmt.Println("Welcome to the Euler Problem Solver CLI!")
+	fmt.Println("Please select a problem to view the answer for: ")
+	fmt.Println("1. Problem 1")
+}
+
+func getUserInput(prompt string) string {
+	reader := bufio.NewReader(os.Stdin)
+
+	fmt.Print(prompt + ": ")
+	input, _ := reader.ReadString('\n')
+
+	return strings.TrimSpace(input)
+}
+
 func main() {
-	val := probs.ProbOne(0, 10)
-	fmt.Println("The result of ProbOne is:", val)
+	printMenu()
+	choice := getUserInput("Enter your choice: ")
+
+	switch strings.ToLower(choice) {
+	case "1":
+		fmt.Println("You selected Problem 1.")
+		res := probs.ProbOne(0, 1000)
+		fmt.Println("The answer is: ", res)
+		return
+	default:
+		fmt.Println("Invalid choice. Please try again.")
+	}
 }

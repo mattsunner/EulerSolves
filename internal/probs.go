@@ -1,3 +1,10 @@
+/*
+probs - Package containing the logic for solving Euler problems.
+This package contains the functions to solve the problems and return the results.
+
+Author: Matthew Sunner, 2025
+*/
+
 package probs
 
 func Sum(intSlice []int) int {
@@ -7,6 +14,13 @@ func Sum(intSlice []int) int {
 	}
 	return sum
 }
+
+// If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9.
+// The sum of these multiples is 23.
+//
+// Find the sum of all the multiples of 3 or 5 below 1000.
+//
+// https://projecteuler.net/problem=1
 
 func ProbOne(countOf int, maxOf int) int {
 	solutionsList := make([]int, 0, countOf)
