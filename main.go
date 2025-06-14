@@ -21,6 +21,7 @@ func printMenu() {
 	fmt.Println("Welcome to the Euler Problem Solver CLI!")
 	fmt.Println("Please select a problem to view the answer for: ")
 	fmt.Println("1. Problem 1")
+	fmt.Println("2. Problem 2")
 }
 
 func getUserInput(prompt string) string {
@@ -42,6 +43,10 @@ func main() {
 		res := probs.ProbOne(0, 1000)
 		fmt.Println("The answer is: ", res)
 		return
+	case "2":
+		fmt.Println("You selected Problem 2.")
+		res := probs.ProbTwo(4000000)
+		fmt.Println("The answer is: ", res)
 	default:
 		fmt.Println("Invalid choice. Please try again.")
 	}
