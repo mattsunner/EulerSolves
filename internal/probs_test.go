@@ -42,3 +42,22 @@ func TestProbOne(t *testing.T) {
 		})
 	}
 }
+
+func TestProbTwo(t *testing.T) {
+	tests := []struct {
+		name  string
+		limit int
+		want  int
+	}{
+		{"Test1", 5, 2},
+		{"Test2", 9, 10},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := ProbTwo(tt.limit); got != tt.want {
+				t.Errorf("ProbTwo(%d) = %d; want %d", tt.limit, got, tt.want)
+			}
+		})
+	}
+}
